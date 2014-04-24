@@ -1,7 +1,7 @@
 {
     "name": "grunt-rev-sovrn",
     "description": "Static file asset revisioning through custom string values",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "homepage": "https://github.com/cbas/grunt-rev",
     "author": [{
             "name": "Sebastiaan Deckers",
