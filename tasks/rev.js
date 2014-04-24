@@ -10,6 +10,8 @@ module.exports = function(grunt) {
         
         this.files.forEach(function(filePair) {
             filePair.src.forEach(function(f) {
+                grunt.log.write("version: " + version);
+                grunt.log.write("base: " + path.basename(f));
                 var renamed = version + "." + path.basename(f);
                 var outPath = path.resolve(path.dirname(f), renamed);
 
