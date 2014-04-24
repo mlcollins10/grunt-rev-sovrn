@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         grunt.log.write("starting rev sovrn \n");
 
         for(prop in this){
-            grunt.log.write(prop + " " + this[prop] + " \n");
+            grunt.log.write(prop + " \n");
         };
         
         this.files.forEach(function(filePair) {
