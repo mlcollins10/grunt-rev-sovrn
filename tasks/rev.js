@@ -7,6 +7,7 @@ module.exports = function(grunt) {
     grunt.registerMultiTask('rev_sovrn', 'Prefix static asset file names with a version number', function() {
         grunt.log.write("starting rev sovrn 2 \n");
         grunt.log.write(this.options.versionSource + "\n");
+        var options = grunt.task.current.options({'private': true});
         
         for(var key in this){
             grunt.log.write('t' + key + "\n");
@@ -16,7 +17,7 @@ module.exports = function(grunt) {
             grunt.log.write("f: " + key + "\n");
         }
         
-        for(var key in grunt.task.current.options){
+        for(var key in options){
             grunt.log.write("o: " + key + "\n");
         }
         
