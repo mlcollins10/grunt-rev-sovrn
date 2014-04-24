@@ -31,6 +31,7 @@ module.exports = function(grunt) {
         for(var file in replaceFiles){
             grunt.log.write("Updating file: " + replaceFiles[file] + "\n");
             var contents = fs.readFileSync(replaceFiles[file], fsOptions);
+            grunt.log.write(contents + "\n");
             contents.replace(versionPattern, versionNum);
             if(environment === "qa" || environment === "dev"){
                 contents.replace(modalPattern, getCompiledModalMarkup(versionNum));
