@@ -29,7 +29,7 @@ module.exports = function(grunt) {
         });
         
         for(var file in replaceFiles){
-            grunt.log.write("found file: " + file + " plus: " + replaceFiles[file]);
+            grunt.log.write("Updating file: " + replaceFiles[file] + "\n");
             var contents = fs.readFileSync(replaceFiles[file], fsOptions);
             contents.replace(versionPattern, version_num);
             if(environment === "qa" || environment === "dev"){
@@ -37,8 +37,8 @@ module.exports = function(grunt) {
             }else{
                 contents.replace(modalPattern, "");
             }
-            fs.writeFileSync(file, contents, fsOptions);
-            grunt.log.write("Updated version in file: " + file + "\n");
+            fs.writeFileSync(replaceFiles[file], contents, fsOptions);
+            grunt.log.write("Updated version in file: " + replaceFiles[file] + "\n");
         }
         
         
