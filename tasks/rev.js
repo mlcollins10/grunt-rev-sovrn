@@ -29,7 +29,8 @@ module.exports = function(grunt) {
         });
         
         for(var file in replaceFiles){
-            var contents = fs.readFileSync(file, fsOptions);
+            grunt.log.write("found file: " + file + " plus: " + replaceFiles[file]);
+            var contents = fs.readFileSync(replaceFiles[file], fsOptions);
             contents.replace(versionPattern, version_num);
             if(environment === "qa" || environment === "dev"){
                 contents.replace(modalPattern, getCompiledModalMarkup(versionPattern));
