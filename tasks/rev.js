@@ -8,23 +8,9 @@ module.exports = function(grunt) {
         grunt.log.write("starting rev sovrn 2 \n");
         grunt.log.write(this.options.versionSource + "\n");
         var options = grunt.task.current.options({'private': true});
+
+        var version = fs.readFileSync(option.versionSource, {encoding:"utf8"});
         
-        for(var key in this){
-            grunt.log.write('t' + key + "\n");
-        }
-        
-        for(var key in this.files){
-            grunt.log.write("f: " + key + "\n");
-        }
-        
-        for(var key in options){
-            grunt.log.write("o: " + key + "\n");
-        }
-        
-        var version = fs.readFileSync(this.versionSource, {encoding:"utf8"});
-        grunt.log.write("versionsssssss");
-        grunt.log.write("version2: " + version);
-        grunt.log.write("version3: " + version.toString());
         this.files.forEach(function(filePair) {
             filePair.src.forEach(function(f) {
                 grunt.log.write("version2: " + version);
