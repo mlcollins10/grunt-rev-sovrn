@@ -23,26 +23,24 @@ If the plugin has been installed correctly, running `grunt --help` at the comman
 [Getting Started]: https://github.com/gruntjs/grunt/blob/devel/docs/getting_started.md
 [package.json]: https://npmjs.org/doc/json.html
 
-## The "rev" task
-
-Use the **rev** task together with [yeoman/grunt-usemin](https://github.com/yeoman/grunt-usemin) for cache busting of static files in your app. This allows them to be cached forever by the browser.
-
 ### Overview
 In your project's Gruntfile, add a section named `rev` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
   rev_sovrn: {
-    options: {
-      versionSource: "/path/to/versionfile"
-    },
     dist: {
-      files: [{
+      files: {
         src: [
           'img/**/*.{jpg,jpeg,gif,png}',
           'fonts/**/*.{eot,svg,ttf,woff}'
         ]
-      }]
+      },
+      options: {
+        versionSource: "/path/to/versionfile",
+        replaceFiles: [ "/some/file/toReplace", "another/file/toReplace" ],
+        versionPattern: "@@@@version@@@"
+      }
     }
   },
 })
@@ -54,6 +52,16 @@ grunt.initConfig({
 Type: `String`
 
 The path of the file containing the version string.
+
+#### options.relpaceFiles
+Type: `List`
+
+List of file paths where a string replacement should occur
+
+#### options.versionPattern
+Type: `String`
+
+The needle to search for when replacing with version number
 
 ## Release History
 _(Nothing yet)_

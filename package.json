@@ -2,7 +2,7 @@
     "name": "grunt-rev-sovrn",
     "description": "Static file asset revisioning through custom string values",
     "version": "0.1.1",
-    "homepage": "https://github.com/cbas/grunt-rev",
+    "homepage": "https://github.com/mcollins10/grunt-rev-sovrn",
     "author": [{
             "name": "Sebastiaan Deckers",
             "email": "seb@ninja.sg",
@@ -16,12 +16,6 @@
         "type": "git",
         "url": "git://github.com/mcollins/grunt-rev-sovrn.git"
     },
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "https://github.com/cbas/grunt-rev/blob/master/LICENSE-MIT"
-        }
-    ],
     "main": "Gruntfile.js",
     "engines": {
         "node": ">= 0.8.0"

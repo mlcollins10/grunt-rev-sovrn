@@ -12,7 +12,6 @@ module.exports = function(grunt) {
         var replaceFiles = options.replaceFiles;
         var versionPattern = options.versionPattern;
         
-        
         this.files.forEach(function(filePair) {
             filePair.src.forEach(function(f) {
                 var renamed = versionNum + "." + path.basename(f);
@@ -33,6 +32,5 @@ module.exports = function(grunt) {
         version.version++;
         fs.writeFileSync(options.versionSource, JSON.stringify(version));
         grunt.log.write("Updated the version number in version config file.\n ");
-        
     });
 };
