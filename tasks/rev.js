@@ -8,6 +8,10 @@ module.exports = function(grunt) {
         grunt.log.write("starting rev sovrn 2 \n");
         grunt.log.write(this.files.versionSource + "\n");
         
+        for(var key in this){
+            grunt.log('t' + key + "\n");
+        }
+        
         for(var key in this.files){
             grunt.log.write("f: " + key + "\n");
         }
