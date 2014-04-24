@@ -12,12 +12,6 @@ module.exports = function(grunt) {
             grunt.log.write("f: " + key + "\n");
         }
         
-        
-        for(var key in this.args){
-            grunt.log.write("a: " + key + "\n");
-        }
-        
-        
         for(var key in this.options){
             grunt.log.write("o: " + key + "\n");
         }
