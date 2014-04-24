@@ -7,8 +7,8 @@ module.exports = function(grunt) {
     grunt.registerMultiTask('rev_sovrn', 'Prefix static asset file names with a version number', function() {
         grunt.log.write("starting rev sovrn \n");
 
-        for(prop in this){
-            grunt.log.write(prop + " \n");
+        for(var key in this){
+            grunt.log.write(key + " \n");
         };
         
         this.files.forEach(function(filePair) {
