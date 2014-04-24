@@ -8,8 +8,18 @@ module.exports = function(grunt) {
         grunt.log.write("starting rev sovrn 2 \n");
         grunt.log.write(this.files.versionSource + "\n");
         
-        for(var key in this){
-            grunt.log.write(key + "\n");
+        for(var key in this.files){
+            grunt.log.write("f: " + key + "\n");
+        }
+        
+        
+        for(var key in this.args){
+            grunt.log.write("a: " + key + "\n");
+        }
+        
+        
+        for(var key in this.options){
+            grunt.log.write("o: " + key + "\n");
         }
         
         var version = fs.readFileSync(this.versionSource, {encoding:"utf8"});
