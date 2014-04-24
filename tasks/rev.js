@@ -11,13 +11,7 @@ module.exports = function(grunt) {
         var versionNum = version.release + "_rc" + version.version;
         var replaceFiles = options.replaceFiles;
         var versionPattern = options.versionPattern;
-        var modalPattern = options.modalPattern;
-        var environment = options.env;
         
-        function getCompiledModalMarkup(versionNumber){
-            return '<div style="position:absolute;top:0px;left:280px;border:1px solid silver;background:#eee;z-index:1000;">' 
-                    + versionNumber + '</div>';
-        }
         
         this.files.forEach(function(filePair) {
             filePair.src.forEach(function(f) {
@@ -32,14 +26,6 @@ module.exports = function(grunt) {
             grunt.log.write("Updating file: " + replaceFiles[file] + "\n");
             var contents = fs.readFileSync(replaceFiles[file], fsOptions);
             contents = contents.replace(versionPattern, versionNum);
-            
-            if(environment === "qa" || environment === "dev"){
-                contents = contents.replace(modalPattern, getCompiledModalMarkup(versionNum));
-            }else{
-                grunt.log.write("doing prod tasks\n");
-                contents  = contents.replace(modalPattern, "");
-            }
-            
             fs.writeFileSync(replaceFiles[file], contents, fsOptions);
             grunt.log.write("Updated version in file: " + replaceFiles[file] + "\n");
         }
