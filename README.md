@@ -24,7 +24,7 @@ If the plugin has been installed correctly, running `grunt --help` at the comman
 [package.json]: https://npmjs.org/doc/json.html
 
 ### Overview
-In your project's Gruntfile, add a section named `rev` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `rev_sovrn` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
