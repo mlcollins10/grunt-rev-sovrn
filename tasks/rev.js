@@ -33,9 +33,12 @@ module.exports = function(grunt) {
             var contents = fs.readFileSync(replaceFiles[file], fsOptions);
             grunt.log.write(contents + "\n");
             contents.replace(versionPattern, versionNum);
+            grunt.log.write("environment detected: " + environment + "\n");
             if(environment === "qa" || environment === "dev"){
+                grunt.log.write("doing qa tasks\n");
                 contents.replace(modalPattern, getCompiledModalMarkup(versionNum));
             }else{
+                grunt.log.write("doing prod tasks\n");
                 contents.replace(modalPattern, "");
             }
             fs.writeFileSync(replaceFiles[file], contents, fsOptions);
