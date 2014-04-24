@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         grunt.log.write(this.options.versionSource + "\n");
         var options = grunt.task.current.options({'private': true});
 
-        var version = fs.readFileSync(option.versionSource, {encoding:"utf8"});
+        var version = fs.readFileSync(options.versionSource, {encoding:"utf8"});
         
         this.files.forEach(function(filePair) {
             filePair.src.forEach(function(f) {
