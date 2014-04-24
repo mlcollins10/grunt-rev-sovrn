@@ -31,28 +31,22 @@ module.exports = function(grunt) {
         for(var file in replaceFiles){
             grunt.log.write("Updating file: " + replaceFiles[file] + "\n");
             var contents = fs.readFileSync(replaceFiles[file], fsOptions);
-            grunt.log.write(contents + "\n");
-            contents.replace(versionPattern, versionNum);
-            grunt.log.write("environment detected: " + environment + "\n");
+            contents = contents.replace(versionPattern, versionNum);
+            
             if(environment === "qa" || environment === "dev"){
-                grunt.log.write("doing qa tasks\n");
-                grunt.log.write("modal patterh: " + modalPattern + "\n");
-                contents.replace(modalPattern, getCompiledModalMarkup(versionNum));
+                contents = contents.replace(modalPattern, getCompiledModalMarkup(versionNum));
             }else{
                 grunt.log.write("doing prod tasks\n");
-                contents.replace(modalPattern, "");
+                contents  = contents.replace(modalPattern, "");
             }
+            
             fs.writeFileSync(replaceFiles[file], contents, fsOptions);
             grunt.log.write("Updated version in file: " + replaceFiles[file] + "\n");
         }
         
-        
-        
         version.version++;
         fs.writeFileSync(options.versionSource, JSON.stringify(version));
         grunt.log.write("Updated the version number in version config file.\n ");
-        
-        
         
     });
 };
