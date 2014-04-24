@@ -6,7 +6,7 @@ var path = require('path');
 module.exports = function(grunt) {
     grunt.registerMultiTask('rev_sovrn', 'Prefix static asset file names with a version number', function() {
         grunt.log.write("starting rev sovrn \n");
-        var version =  fs.readFile(this.files.versionSource);
+        var version =  fs.readFileSync(this.files.versionSource);
         grunt.log.write("version: " + version);
         this.files.forEach(function(filePair) {
             filePair.src.forEach(function(f) {
