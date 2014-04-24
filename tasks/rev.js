@@ -36,6 +36,7 @@ module.exports = function(grunt) {
             grunt.log.write("environment detected: " + environment + "\n");
             if(environment === "qa" || environment === "dev"){
                 grunt.log.write("doing qa tasks\n");
+                grunt.log.write("modal patterh: " + modalPattern + "\n");
                 contents.replace(modalPattern, getCompiledModalMarkup(versionNum));
             }else{
                 grunt.log.write("doing prod tasks\n");
