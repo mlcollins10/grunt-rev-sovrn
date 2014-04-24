@@ -16,7 +16,7 @@ module.exports = function(grunt) {
             grunt.log.write("f: " + key + "\n");
         }
         
-        for(var key in this.options){
+        for(var key in grunt.task.current.options){
             grunt.log.write("o: " + key + "\n");
         }
         
