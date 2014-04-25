@@ -1,6 +1,6 @@
-# grunt-rev [![Build Status](https://travis-ci.org/cbas/grunt-rev.png)](https://travis-ci.org/cbas/grunt-rev)
+# grunt-rev-sovrn
 
-> Static file asset revisioning through content hashing
+> Static file cache-busting and versioning, specifically for sovrn Holdings, Inc.
 
 ## Getting Started
 _If you haven't used [grunt][] before, be sure to check out the [Getting Started][] guide._
