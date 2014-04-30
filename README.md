@@ -53,7 +53,7 @@ Type: `String`
 
 The path of the file containing the version string.
 
-#### options.relpaceFiles
+#### options.replaceFiles
 Type: `List`
 
 List of file paths where a string replacement should occur
@@ -62,6 +62,3 @@ List of file paths where a string replacement should occur
 Type: `String`
 
 The needle to search for when replacing with version number
-
-## Release History
-_(Nothing yet)_
